@@ -998,3 +998,28 @@ input {
   }
 
 }
+
+.dashboard-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 13px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.dashboard-button:hover {
+  background: #333;
+}
+
+@media (max-width: 600px) {
+  .dashboard-button {
+    padding: 8px 9px;
+    font-size: 8px;
+  }
+}
