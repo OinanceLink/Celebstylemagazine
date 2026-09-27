@@ -1,0 +1,499 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Celeb Style Magazine — Dashboard</title>
+<meta name="description" content="Celeb Style Magazine content management dashboard.">
+
+<link rel="stylesheet" href="dashboard.css">
+
+</head><body><!-- LOGIN SCREEN -->
+<section class="login-screen" id="loginScreen">
+
+    <div class="login-box">
+
+        <div class="login-logo">
+            <span>CELEB STYLE</span>
+            <small>MAGAZINE</small>
+        </div>
+
+        <p class="login-label">EDITORIAL DASHBOARD</p>
+
+        <h1>Welcome Back</h1>
+
+        <p class="login-description">
+            Sign in to manage your celebrity, fashion and entertainment stories.
+        </p>
+
+        <form id="loginForm">
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+            >
+
+            <button type="submit" class="login-button">
+                Sign In
+            </button>
+
+        </form>
+
+        <p class="login-note">
+            Dashboard V1 • Celeb Style Magazine
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>CELEB STYLE</span>
+            <small>MAGAZINE</small>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <button class="nav-item active" data-section="overview">
+                <span>▣</span>
+                Overview
+            </button>
+
+            <button class="nav-item" data-section="articles">
+                <span>📰</span>
+                Articles
+            </button>
+
+            <button class="nav-item" data-section="newArticle">
+                <span>＋</span>
+                New Article
+            </button>
+
+            <button class="nav-item" data-section="subscribers">
+                <span>✉</span>
+                Subscribers
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="index.html" class="website-link">
+                ← View Website
+            </a>
+
+            <button id="logoutButton" class="logout-button">
+                Log Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN AREA -->
+    <main class="main-content">
+
+        <!-- TOP HEADER -->
+        <header class="dashboard-header">
+
+            <div>
+                <p class="dashboard-kicker">CELEB STYLE MAGAZINE</p>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+
+            <button class="mobile-menu-button" id="mobileMenuButton">
+                ☰
+            </button>
+
+        </header>
+
+
+        <!-- OVERVIEW -->
+        <section class="dashboard-section active-section" id="overviewSection">
+
+            <div class="welcome-card">
+
+                <div>
+                    <p class="section-label">EDITORIAL CONTROL CENTER</p>
+
+                    <h2>Welcome to your magazine dashboard.</h2>
+
+                    <p>
+                        Create and manage celebrity news, fashion stories,
+                        red carpet coverage, beauty, music, movies and lifestyle content.
+                    </p>
+                </div>
+
+                <button class="primary-button" id="startArticleButton">
+                    + Create New Article
+                </button>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-icon">📰</span>
+                    <div>
+                        <strong id="articleCount">0</strong>
+                        <span>Published Articles</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon">✉</span>
+                    <div>
+                        <strong id="subscriberCount">0</strong>
+                        <span>Subscribers</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon">✍</span>
+                    <div>
+                        <strong id="draftCount">0</strong>
+                        <span>Drafts</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <div>
+                    <p class="section-label">QUICK START</p>
+                    <h3>Publish your first story</h3>
+                    <p>
+                        Add a headline, article picture, category and story content.
+                    </p>
+                </div>
+
+                <button class="secondary-button" id="quickNewArticle">
+                    New Article
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTICLES -->
+        <section class="dashboard-section" id="articlesSection">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">CONTENT</p>
+                    <h2>Published Articles</h2>
+                </div>
+
+                <button class="primary-button" id="articlesNewButton">
+                    + New Article
+                </button>
+
+            </div>
+
+            <div class="articles-list" id="articlesList">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">📰</div>
+
+                    <h3>No articles yet</h3>
+
+                    <p>
+                        Your published stories will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NEW ARTICLE -->
+        <section class="dashboard-section" id="newArticleSection">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">EDITORIAL</p>
+                    <h2>Create New Article</h2>
+                </div>
+
+                <button class="secondary-button" id="cancelArticleButton">
+                    Cancel
+                </button>
+
+            </div>
+
+
+            <form id="articleForm" class="article-form">
+
+                <!-- IMAGE -->
+                <div class="form-card">
+
+                    <div class="form-card-title">
+                        <h3>Article Picture</h3>
+                        <p>Choose the main image for your story.</p>
+                    </div>
+
+                    <label class="image-upload">
+
+                        <input
+                            type="file"
+                            id="articleImage"
+                            accept="image/*"
+                        >
+
+                        <div class="upload-content" id="uploadContent">
+
+                            <div class="upload-icon">＋</div>
+
+                            <strong>Choose Picture</strong>
+
+                            <span>
+                                Tap here to select an image from your phone
+                            </span>
+
+                        </div>
+
+                        <img
+                            id="imagePreview"
+                            class="image-preview"
+                            alt="Article preview"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <!-- ARTICLE INFORMATION -->
+                <div class="form-card">
+
+                    <div class="form-card-title">
+                        <h3>Article Information</h3>
+                        <p>Enter the basic details of your story.</p>
+                    </div>
+
+
+                    <label for="articleTitle">
+                        Headline
+                    </label>
+
+                    <input
+                        type="text"
+                        id="articleTitle"
+                        placeholder="Enter your article headline"
+                        maxlength="150"
+                        required
+                    >
+
+
+                    <label for="articleDescription">
+                        Short Description
+                    </label>
+
+                    <textarea
+                        id="articleDescription"
+                        placeholder="Write a short description for the article..."
+                        rows="4"
+                        maxlength="300"
+                        required
+                    ></textarea>
+
+
+                    <div class="form-row">
+
+                        <div>
+                            <label for="articleCategory">
+                                Category
+                            </label>
+
+                            <select id="articleCategory" required>
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="Celebrity">
+                                    Celebrity
+                                </option>
+
+                                <option value="Fashion">
+                                    Fashion & Style
+                                </option>
+
+                                <option value="Red Carpet">
+                                    Red Carpet
+                                </option>
+
+                                <option value="Beauty">
+                                    Beauty
+                                </option>
+
+                                <option value="Music">
+                                    Music
+                                </option>
+
+                                <option value="Movies & TV">
+                                    Movies & TV
+                                </option>
+
+                                <option value="Lifestyle">
+                                    Lifestyle
+                                </option>
+
+                                <option value="Trending">
+                                    Trending
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div>
+                            <label for="articleAuthor">
+                                Author
+                            </label>
+
+                            <input
+                                type="text"
+                                id="articleAuthor"
+                                placeholder="Author name"
+                                value="Celeb Style Magazine"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <label for="articleDate">
+                        Publication Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="articleDate"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONTENT -->
+                <div class="form-card">
+
+                    <div class="form-card-title">
+                        <h3>Article Content</h3>
+                        <p>
+                            Write the full story that readers will see.
+                        </p>
+                    </div>
+
+                    <label for="articleContent">
+                        Story
+                    </label>
+
+                    <textarea
+                        id="articleContent"
+                        class="article-content-input"
+                        placeholder="Write your article here..."
+                        rows="14"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="saveDraftButton"
+                    >
+                        Save Draft
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Publish Article
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- SUBSCRIBERS -->
+        <section class="dashboard-section" id="subscribersSection">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="section-label">AUDIENCE</p>
+                    <h2>Email Subscribers</h2>
+                </div>
+
+            </div>
+
+            <div class="empty-state">
+
+                <div class="empty-icon">✉</div>
+
+                <h3>No subscribers yet</h3>
+
+                <p>
+                    Newsletter subscribers will appear here after we connect the
+                    email subscription system.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- SUCCESS MESSAGE -->
+<div class="toast" id="toast">
+    <span id="toastMessage">Article published successfully.</span>
+</div>
+
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
