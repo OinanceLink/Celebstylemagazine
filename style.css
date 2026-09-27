@@ -1,0 +1,1000 @@
+/* =========================================================
+   CELEB STYLE MAGAZINE
+   HOMEPAGE V1
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111111;
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+  background: #111111;
+  color: #ffffff;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.top-bar-inner {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.top-bar p {
+  opacity: 0.85;
+}
+
+.top-links {
+  display: flex;
+  gap: 18px;
+}
+
+.top-links a {
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.top-links a:hover {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.header-inner {
+  height: 105px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.brand-main {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+  font-weight: 700;
+}
+
+.brand-sub {
+  margin-top: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 6px;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+.menu-button {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.menu-button span {
+  width: 23px;
+  height: 2px;
+  background: #111111;
+  display: block;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.search-button {
+  justify-self: end;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.search-icon {
+  display: block;
+  width: 17px;
+  height: 17px;
+  border: 2px solid #111111;
+  border-radius: 50%;
+  position: absolute;
+  top: 9px;
+  left: 8px;
+}
+
+.search-icon::after {
+  content: "";
+  width: 8px;
+  height: 2px;
+  background: #111111;
+  position: absolute;
+  right: -6px;
+  bottom: -3px;
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  min-height: 52px;
+}
+
+.nav-inner a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  padding: 17px 0;
+  position: relative;
+}
+
+.nav-inner a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 9px;
+  width: 0;
+  height: 2px;
+  background: #111111;
+  transition: width 0.2s ease;
+}
+
+.nav-inner a:hover::after,
+.nav-inner a.active::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   SEARCH PANEL
+========================================================= */
+
+.search-panel {
+  display: none;
+  background: #f4f4f4;
+  border-bottom: 1px solid #dddddd;
+  padding: 20px 0;
+}
+
+.search-panel.open {
+  display: block;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form input {
+  flex: 1;
+  height: 48px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  padding: 0 15px;
+  outline: none;
+}
+
+.search-form input:focus {
+  border-color: #111111;
+}
+
+.search-form button {
+  height: 48px;
+  border: 0;
+  background: #111111;
+  color: #ffffff;
+  padding: 0 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TICKER
+========================================================= */
+
+.ticker {
+  border-bottom: 1px solid #e5e5e5;
+  background: #fafafa;
+}
+
+.ticker-inner {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ticker-label {
+  background: #111111;
+  color: #ffffff;
+  padding: 5px 9px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ticker-text {
+  font-size: 12px;
+  color: #555555;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+  padding: 38px 0 60px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.75fr);
+  gap: 34px;
+}
+
+.hero-story img {
+  aspect-ratio: 16 / 10;
+}
+
+.story-content {
+  padding-top: 20px;
+}
+
+.category {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.hero-story h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1.02;
+  margin-bottom: 15px;
+  max-width: 850px;
+}
+
+.hero-story p {
+  color: #666666;
+  max-width: 700px;
+  font-size: 15px;
+}
+
+.story-meta,
+.small-date,
+.article-date {
+  display: block;
+  color: #888888;
+  font-size: 11px;
+  margin-top: 14px;
+}
+
+
+/* =========================================================
+   HERO SIDE STORIES
+========================================================= */
+
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-story {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.side-story img {
+  aspect-ratio: 1 / 0.8;
+  height: 100%;
+}
+
+.side-story h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 2px solid #111111;
+  padding-bottom: 15px;
+  margin-bottom: 28px;
+}
+
+.section-kicker {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.section-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.view-all {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   LATEST STORIES
+========================================================= */
+
+.latest-section {
+  background: #f7f7f7;
+  padding: 65px 0;
+}
+
+.latest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.article-card {
+  background: #ffffff;
+}
+
+.article-card img {
+  aspect-ratio: 1.35 / 1;
+}
+
+.article-info {
+  padding: 17px;
+}
+
+.article-info h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.article-info p {
+  color: #666666;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TRENDING
+========================================================= */
+
+.trending-section {
+  padding: 70px 0;
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 45px;
+}
+
+.trending-list {
+  border-top: 1px solid #dddddd;
+}
+
+.trending-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 15px;
+  padding: 23px 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.number {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+  color: #999999;
+}
+
+.trending-item h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.trending-image {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.trending-image img {
+  height: 100%;
+}
+
+.image-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px;
+  color: #ffffff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+
+.image-overlay span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.image-overlay h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  line-height: 1.1;
+  margin-top: 7px;
+}
+
+
+/* =========================================================
+   FASHION
+========================================================= */
+
+.fashion-section {
+  background: #111111;
+  color: #ffffff;
+  padding: 70px 0;
+}
+
+.fashion-section .section-heading {
+  border-color: #ffffff;
+}
+
+.fashion-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 25px;
+}
+
+.fashion-large img {
+  aspect-ratio: 1.35 / 1;
+}
+
+.fashion-content {
+  padding-top: 18px;
+}
+
+.fashion-content h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+  line-height: 1.08;
+}
+
+.fashion-content p {
+  color: #bdbdbd;
+  margin-top: 10px;
+}
+
+.fashion-small-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.fashion-small img {
+  aspect-ratio: 1 / 1;
+  margin-bottom: 13px;
+}
+
+.fashion-small h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  line-height: 1.12;
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.newsletter-section {
+  padding: 70px 0;
+  background: #eeeeee;
+}
+
+.newsletter-box {
+  background: #ffffff;
+  padding: 45px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.newsletter-copy h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.newsletter-copy p {
+  margin-top: 12px;
+  max-width: 520px;
+  color: #666666;
+}
+
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  height: 50px;
+  border: 1px solid #cccccc;
+  padding: 0 15px;
+  outline: none;
+}
+
+.newsletter-form input:focus {
+  border-color: #111111;
+}
+
+.newsletter-form button {
+  height: 50px;
+  padding: 0 22px;
+  border: 0;
+  background: #111111;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.newsletter-form small {
+  grid-column: 1 / -1;
+  color: #888888;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+  background: #111111;
+  color: #ffffff;
+  padding: 60px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 50px;
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  align-items: flex-start;
+}
+
+.footer-logo .brand-main {
+  font-size: 27px;
+}
+
+.footer-brand p {
+  color: #999999;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column h3 {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  color: #999999;
+  font-size: 13px;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #333333;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #777777;
+  font-size: 11px;
+}
+
+.footer-bottom div {
+  display: flex;
+  gap: 18px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .nav-inner {
+    gap: 20px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-side {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .side-story {
+    display: block;
+  }
+
+  .side-story img {
+    height: auto;
+    margin-bottom: 12px;
+  }
+
+  .latest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trending-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trending-image {
+    min-height: 450px;
+  }
+
+  .fashion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-box {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+
+  .top-bar {
+    display: none;
+  }
+
+
+  .header-inner {
+    height: 82px;
+  }
+
+  .brand-main {
+    font-size: 23px;
+  }
+
+  .brand-sub {
+    font-size: 8px;
+    letter-spacing: 4px;
+    margin-top: 6px;
+  }
+
+
+  .main-nav {
+    display: none;
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .nav-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  .nav-inner a {
+    padding: 12px 0;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .nav-inner a::after {
+    display: none;
+  }
+
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+
+  .ticker-inner {
+    min-height: 40px;
+  }
+
+  .ticker-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+  .hero-section {
+    padding: 25px 0 45px;
+  }
+
+  .hero-story h1 {
+    font-size: 34px;
+  }
+
+  .hero-story p {
+    font-size: 14px;
+  }
+
+
+  .hero-side {
+    display: flex;
+    gap: 0;
+  }
+
+  .side-story {
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    padding: 15px 0;
+  }
+
+  .side-story h2 {
+    font-size: 17px;
+  }
+
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section-heading h2 {
+    font-size: 29px;
+  }
+
+
+  .latest-section,
+  .trending-section,
+  .fashion-section,
+  .newsletter-section {
+    padding: 50px 0;
+  }
+
+
+  .latest-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .trending-item {
+    grid-template-columns: 45px 1fr;
+  }
+
+  .trending-item h3 {
+    font-size: 19px;
+  }
+
+
+  .trending-image {
+    min-height: 400px;
+  }
+
+
+  .fashion-small-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fashion-content h3 {
+    font-size: 26px;
+  }
+
+
+  .newsletter-box {
+    padding: 30px 22px;
+    gap: 30px;
+  }
+
+  .newsletter-copy h2 {
+    font-size: 34px;
+  }
+
+  .newsletter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .footer-bottom div {
+    flex-wrap: wrap;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .brand-main {
+    font-size: 20px;
+  }
+
+  .hero-story h1 {
+    font-size: 30px;
+  }
+
+  .fashion-small-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
